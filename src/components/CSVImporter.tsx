@@ -59,7 +59,7 @@ export default function CSVImporter({ modelConfig, appSlug, onImportComplete }: 
     <div className="card" style={{ marginBottom: '1.5rem', border: '1px dashed var(--primary)', backgroundColor: 'transparent' }}>
       <h4>Import from CSV</h4>
       <p style={{ fontSize: '0.9rem', marginBottom: '1rem', color: 'var(--text-muted)' }}>
-        Expected columns: {modelConfig.fields.map(f => f.name).join(', ')}
+        Expected columns: {modelConfig.fields.map((f: any) => f.name).join(', ')}
       </p>
       <input type="file" accept=".csv" onChange={(e) => setFile(e.target.files?.[0] || null)} />
       {error && <p style={{ color: 'var(--error)', marginTop: '0.5rem' }}>{error}</p>}
